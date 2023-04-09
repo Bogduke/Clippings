@@ -1,10 +1,10 @@
 # Starts with "MyClippings" and ends with "Notes"
 # Removes "- Your Highlight"
-with open("MyClippings.txt", "rb") as input_file:
+with open("My Clippings.txt", "rb") as input_file:
     lines = input_file.readlines()
     with open("Clippings.txt", "wb") as output_file:
         for line in lines:
-            if not line.startswith(b"- Your Highlight"):
+            if not line.startswith(b"- Your Highlight") and not line.startswith(b"- Your Bookmark") and not line.startswith((b"- Your Note")):
                 output_file.write(line)
 
 with open("Clippings.txt", "r", encoding="utf-8") as input_file:
